@@ -1,8 +1,12 @@
 # Olive Tree Bridge
 
+**⚠️ Nothing to install!** This repo is just a tiny GitHub Pages site that redirects HTTPS links into the Olive Tree Bible Study app (if already installed on your device). To use Olive Tree, download it from the [iOS App Store](https://apps.apple.com/us/app/bible-app-read-study-daily/id332615624) or [Olive Tree website](https://www.olivetree.com/apps) for Mac.
+
+---
+
 **Bridge HTTPS links into the Olive Tree Bible Study app on Mac and iOS.**
 
-Many chat interfaces (like Grok Bot, ChatGPT, and others) can open `https://` links but not custom URL schemes like `olivetree://`. This tiny static page acts as a bridge: you click an HTTPS link, and it redirects to open the verse in Olive Tree Bible Study.
+Many chat interfaces (like Grok Bot, ChatGPT, Claude, and others) can open `https://` links but not custom URL schemes like `olivetree://`. This tiny static page acts as a bridge: you click an HTTPS link, and it redirects to open the verse in Olive Tree Bible Study.
 
 🔗 **Live demo:** [Matthew 11:28](https://burbank.github.io/olivetree-bridge/?ref=40.11.28)
 
@@ -34,6 +38,22 @@ https://burbank.github.io/olivetree-bridge/?ref={book}.{chapter}.{verse}
 - `?ref=43.3.16` → John 3:16
 - `?ref=19.23` → Psalm 23 (whole chapter)
 - `?ref=1.1.1` → Genesis 1:1
+
+---
+
+## Using with AI Assistants
+
+To have an AI assistant (ChatGPT, Claude, Cursor, etc.) cite Bible verses as clickable Olive Tree links, add this to your project instructions, custom instructions, or system prompt:
+
+```
+When citing Bible references, format them as Markdown links using:
+https://burbank.github.io/olivetree-bridge/?ref={book}.{chapter}.{verse}
+
+Use Protestant book numbers (1-66). Examples:
+- John 3:16 → [John 3:16](https://burbank.github.io/olivetree-bridge/?ref=43.3.16)
+- Romans 8:28 → [Romans 8:28](https://burbank.github.io/olivetree-bridge/?ref=45.8.28)
+- Psalm 23 → [Psalm 23](https://burbank.github.io/olivetree-bridge/?ref=19.23)
+```
 
 ---
 

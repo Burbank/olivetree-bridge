@@ -16,9 +16,24 @@ code {
   border-radius: 3px;
   font-size: 0.9em;
 }
+pre {
+  background: #f4f4f4;
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 0.85em;
+  line-height: 1.4;
+}
 a { color: #0066cc; }
+.warning {
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 15px;
+  margin: 20px 0;
+}
 .example { margin: 20px 0; }
 .note { color: #666; font-size: 0.9em; margin-top: 20px; }
+h2 { font-size: 1.3em; margin-top: 30px; margin-bottom: 10px; }
 </style>
 <script>
 (function () {
@@ -35,16 +50,22 @@ a { color: #0066cc; }
     document.addEventListener('DOMContentLoaded', function() {
       document.body.innerHTML = 
         '<h1>Olive Tree Bridge</h1>' +
-        '<p>This page bridges HTTPS links into the Olive Tree Bible Study app on Mac and iOS.</p>' +
-        '<p>Many chat UIs (like Grok Bot) can open <code>https://</code> links but not custom URL schemes like <code>olivetree://</code>. This bridge solves that.</p>' +
+        '<div class="warning">' +
+        '<strong>⚠️ Nothing to download or install here!</strong> This page is just a tiny web redirect. It opens Bible references in the <strong>Olive Tree Bible Study app</strong> if you already have it installed.' +
+        '</div>' +
+        '<p>This bridge converts HTTPS links into <code>olivetree://</code> deep links for Mac and iOS.</p>' +
+        '<p>Many chat UIs (like Grok Bot, ChatGPT, Claude) can open <code>https://</code> links but not custom URL schemes like <code>olivetree://</code>. This bridge solves that.</p>' +
         '<div class="example"><strong>Try it:</strong><br>' +
         '<a href="?ref=40.11.28">Matthew 11:28</a> • ' +
         '<a href="?ref=43.3.16">John 3:16</a> • ' +
         '<a href="?ref=19.23">Psalm 23</a></div>' +
-        '<p><strong>Format:</strong> Add <code>?ref={book}.{chapter}.{verse}</code> where book is the Protestant book number (1–66):<br>' +
+        '<p><strong>Format:</strong> <code>?ref={book}.{chapter}.{verse}</code> where book is the Protestant book number (1–66):<br>' +
         'Genesis = 1, Matthew = 40, John = 43, Revelation = 66</p>' +
-        '<p class="note">Requires Olive Tree Bible Study app installed on your device. First click may prompt your OS to allow the app to open.</p>' +
-        '<p class="note">📖 <a href="https://github.com/Burbank/olivetree-bridge">View on GitHub</a> for details and book number reference.</p>';
+        '<p class="note">Requires Olive Tree Bible Study app on your device (<a href="https://apps.apple.com/us/app/bible-app-read-study-daily/id332615624">iOS App Store</a> • <a href="https://www.olivetree.com/apps">Mac download</a>). First click may prompt your OS to allow the app to open.</p>' +
+        '<h2>Using with AI Assistants</h2>' +
+        '<p>Want an AI to cite Bible verses as clickable Olive Tree links? Add this to your project instructions or system prompt:</p>' +
+        '<pre><code>When citing Bible references, format as Markdown links:\nhttps://burbank.github.io/olivetree-bridge/?ref={book}.{chapter}.{verse}\n\nUse Protestant book numbers (1-66). Examples:\n- John 3:16 → [John 3:16](https://burbank.github.io/olivetree-bridge/?ref=43.3.16)\n- Romans 8:28 → [Romans 8:28](https://burbank.github.io/olivetree-bridge/?ref=45.8.28)</code></pre>' +
+        '<p class="note">📖 <a href="https://github.com/Burbank/olivetree-bridge">View on GitHub</a> for full book number reference.</p>';
     });
     return;
   }
